@@ -20,7 +20,8 @@ body {
 .container {
   width: $max-width;
   max-width: calc(100% - $gutter);
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
   padding-right: $halfGutter;
   padding-left: $halfGutter;
 }
@@ -40,26 +41,91 @@ body {
   height: auto;
 }
 
-%space-between {
+.space-between {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-%center {
+.center {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-%items-center {
+.items-center {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-%text-center {
+.text-center {
   text-align: center;
 }
 
 @import "grid-system";
+
+@mixin transition($time) {
+  -webkit-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
+}
+
+header {
+  height: 100vh;
+  background-color: $blackColor;
+  .row:first-of-type {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $whiteColor;
+      opacity: 0.3;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        li {
+          padding-left: $gutter;
+          a {
+            @include transition(0.5s);
+            color: $whiteColor;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding-top: $gutter;
+            padding-bottom: $gutter;
+            display: block;
+            &:active,
+            &.active,
+            &.focus,
+            &:hover {
+              color: $primaryColor;
+              border-bottom: 1px solid $primaryColor;
+            }
+          }
+        }
+      }
+      form {
+        padding-left: $gutter;
+        i {
+          height: $gutter;
+          line-height: $gutter;
+          color: $lightFontColor;
+          border-left: 1px solid $lightFontColor;
+          padding-left: $halfGutter;
+        }
+      }
+    }
+  }
+}

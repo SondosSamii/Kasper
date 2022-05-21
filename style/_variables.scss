@@ -1,9 +1,11 @@
+@use "sass:map";
+
 $max-width: 100%;
 $columns: 12;
 $gutter: 30px;
 $halfGutter: calc($gutter / 2);
 $margin: 1.5rem;
-$sectionPadding: 50px;
+// $sectionPadding: 50px;
 
 $grid-breakpoints: (
   xs: 0,
@@ -11,7 +13,6 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px,
 );
 
 $container-max-widths: (
@@ -20,5 +21,8 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px,
 );
+
+$smallScreen: map.get($grid-breakpoints, "sm");
+$mediumScreen: map.get($grid-breakpoints, "md");
+$largeScreen: map.get($grid-breakpoints, "lg");
