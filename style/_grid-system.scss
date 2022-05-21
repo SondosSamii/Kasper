@@ -1,0 +1,29 @@
+@import "variables";
+
+// Make Container Media Queries
+@each $breakpoint, $breakpointVal in $grid-breakpoints {
+  @media screen and (min-width: $breakpointVal) {
+    @each $maxWidth, $maxWidthVal in $container-max-widths {
+      @if $breakpoint == $maxWidth {
+        .container {
+          max-width: $maxWidthVal;
+        }
+        @for $i from 1 through $columns {
+          @if ($breakpoint == "xs") {
+            .col-#{$i} {
+              width: calc($max-width / ($columns / $i));
+              padding-right: $halfGutter;
+              padding-left: $halfGutter;
+            }
+          } @else {
+            .col-#{$breakpoint}-#{$i} {
+              width: calc($max-width / ($columns / $i));
+              padding-right: $halfGutter;
+              padding-left: $halfGutter;
+            }
+          }
+        }
+      }
+    }
+  }
+}
