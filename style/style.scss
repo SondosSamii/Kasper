@@ -72,8 +72,10 @@ body {
 }
 
 header {
-  height: 100vh;
-  background-color: $blackColor;
+  position: absolute;
+  right: $halfGutter;
+  left: $halfGutter;
+  z-index: 3;
 
   .row:first-of-type {
     position: relative;
@@ -139,6 +141,50 @@ header {
   }
 }
 
+section.landing {
+  min-height: 100vh;
+  background-color: $blackColor;
+  background-image: url(../assets/landing-bg.jpg);
+  background-size: cover;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $blackColorOverlay;
+  }
+
+  .content {
+    color: $whiteColor;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 70vw;
+    background-color: $primaryColorOverlay;
+
+    .text {
+      max-width: calc(90% - $gutter);
+      margin-left: auto;
+      padding: $gutter;
+
+      h1 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 50px;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-weight: 400;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: $mediumScreen) {
   header nav {
     ul {
@@ -156,12 +202,16 @@ header {
 
 @media screen and (max-width: $mediumScreen) {
   header nav {
+
     ul {
       flex-direction: column;
       position: absolute;
       top: 100%;
       right: 0;
       left: 0;
+      background-color: $blackColorOverlay;
+      padding-right: $gutter;
+      padding-left: $gutter;
       display: none;
 
       li {
@@ -187,6 +237,18 @@ header {
         &:focus {
           color: $primaryColor;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $largeScreen) {
+  section.landing {
+    .content {
+      width: 100vw;
+
+      .text {
+        margin: auto;
       }
     }
   }

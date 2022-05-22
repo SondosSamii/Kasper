@@ -446,8 +446,10 @@ body {
   }
 }
 header {
-  height: 100vh;
-  background-color: #1f2021;
+  position: absolute;
+  right: 1rem;
+  left: 1rem;
+  z-index: 3;
 }
 header .row:first-of-type {
   position: relative;
@@ -503,6 +505,45 @@ header nav form .search {
   padding-left: 1rem;
 }
 
+section.landing {
+  min-height: 100vh;
+  background-color: #1f2021;
+  background-image: url(../assets/landing-bg.jpg);
+  background-size: cover;
+}
+section.landing .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(31, 32, 33, 0.7);
+}
+section.landing .content {
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 70vw;
+  background-color: rgba(0, 199, 252, 0.5);
+}
+section.landing .content .text {
+  max-width: calc(90% - 2rem);
+  margin-left: auto;
+  padding: 2rem;
+}
+section.landing .content .text h1 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+section.landing .content .text p {
+  font-weight: 400;
+  line-height: 28px;
+}
+
 @media screen and (min-width: 768px) {
   header nav ul {
     display: flex;
@@ -519,6 +560,9 @@ header nav form .search {
     top: 100%;
     right: 0;
     left: 0;
+    background-color: rgba(31, 32, 33, 0.7);
+    padding-right: 2rem;
+    padding-left: 2rem;
     display: none;
   }
   header nav ul li {
@@ -541,6 +585,14 @@ header nav form .search {
   }
   header nav i.toggle-menu:hover, header nav i.toggle-menu:focus {
     color: #00c7fc;
+  }
+}
+@media screen and (max-width: 992px) {
+  section.landing .content {
+    width: 100vw;
+  }
+  section.landing .content .text {
+    margin: auto;
   }
 }
 
