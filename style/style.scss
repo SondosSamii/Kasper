@@ -74,8 +74,11 @@ body {
 header {
   height: 100vh;
   background-color: $blackColor;
+
   .row:first-of-type {
     position: relative;
+    min-height: 4rem;
+
     &::after {
       content: "";
       position: absolute;
@@ -86,44 +89,103 @@ header {
       background-color: $whiteColor;
       opacity: 0.3;
     }
-    nav {
-      display: flex;
-      align-items: center;
-      ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-        display: flex;
-        li {
-          padding-left: $gutter;
-          a {
-            @include transition(0.5s);
-            color: $whiteColor;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding-top: $gutter;
-            padding-bottom: $gutter;
-            display: block;
-            &:active,
-            &.active,
-            &.focus,
-            &:hover {
-              color: $primaryColor;
-              border-bottom: 1px solid $primaryColor;
-            }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+
+      li {
+        padding-left: $gutter;
+
+        a {
+          @include transition(0.5s);
+          color: $whiteColor;
+          font-size: 13px;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-decoration: none;
+          padding-top: $gutter;
+          padding-bottom: $gutter;
+          display: block;
+
+          &:active,
+          &.active,
+          &.focus,
+          &:hover {
+            color: $primaryColor;
+            border-bottom: 1px solid $primaryColor;
           }
         }
       }
-      form {
+    }
+
+    form {
+      padding-left: $gutter;
+
+      .search {
+        color: $lightFontColor;
+        height: $gutter;
+        line-height: $gutter;
+        border-left: 1px solid $lightFontColor;
+        padding-left: $halfGutter;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $mediumScreen) {
+  header nav {
+    ul {
+      display: flex;
+    }
+
+    i {
+      &.toggle-menu {
         padding-left: $gutter;
-        i {
-          height: $gutter;
-          line-height: $gutter;
-          color: $lightFontColor;
-          border-left: 1px solid $lightFontColor;
-          padding-left: $halfGutter;
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mediumScreen) {
+  header nav {
+    ul {
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      display: none;
+
+      li {
+        padding-left: 0;
+
+        a {
+          padding-top: $halfGutter;
+          padding-bottom: $halfGutter;
+        }
+      }
+    }
+
+    i {
+      cursor: pointer;
+
+      &.toggle-menu {
+        @include transition(0.5s);
+        color: $lightFontColor;
+        padding-left: $gutter;
+        display: block;
+
+        &:hover,
+        &:focus {
+          color: $primaryColor;
         }
       }
     }
