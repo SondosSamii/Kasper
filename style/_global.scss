@@ -1,0 +1,162 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  width: $max-width;
+  max-width: calc(100% - $gutter);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $halfGutter;
+  padding-left: $halfGutter;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  margin-right: -$halfGutter;
+  margin-left: -$halfGutter;
+}
+
+.space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@import "grid-system";
+
+.section-padding {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+}
+
+.img-fix {
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin bgOverlay($bgColor) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $bgColor;
+}
+
+@mixin contentOverlay($color, $top, $transform, $bgColor) {
+  color: $color;
+  position: absolute;
+  top: $top;
+  transform: $transform;
+  background-color: $bgColor;
+}
+
+@mixin sectionBackground($minHeight, $bgColor, $bgURL) {
+  min-height: $minHeight;
+  background-color: $bgColor;
+  background-image: url($bgURL);
+  background-size: cover;
+}
+
+@mixin transition($time) {
+  -webkit-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
+}
+
+section {
+  header.main-header {
+    text-align: center;
+    padding-bottom: $sectionPadding;
+
+    h2 {
+      color: $blackColor;
+      font-size: 30px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 100px;
+        height: 1px;
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        background-color: $blackColor;
+      }
+
+      &::after {
+        content: "";
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        left: 50%;
+        bottom: -15.5px;
+        transform: translateX(-50%);
+        border: 1px solid $blackColor;
+        border-radius: 50%;
+        background-color: $whiteColor;
+      }
+    }
+
+    p {
+      width: 500px;
+      max-width: 95%;
+      margin: 0 auto;
+      color: $primaryFontColor;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 25px;
+    }
+  }
+
+  .content {
+    @include contentOverlay($whiteColor, 50%, translateY(-50%), $primaryColorOverlay);
+    width: 70vw;
+
+    .text {
+      max-width: calc(90% - $gutter);
+      padding: $gutter;
+
+      p {
+        font-weight: 400;
+        line-height: 28px;
+      }
+    }
+  }
+}

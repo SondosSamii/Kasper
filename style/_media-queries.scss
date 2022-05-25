@@ -1,0 +1,184 @@
+@media screen and (min-width: $mediumScreen) {
+    body>header nav {
+        ul {
+            display: flex;
+        }
+
+        i {
+            &.toggle-menu {
+                padding-left: $gutter;
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $largeScreen) {
+    section {
+        .content {
+            width: 100vw;
+            max-width: 100%;
+
+            .text {
+                margin: auto;
+            }
+        }
+
+        &.features {
+            .img-container {
+                right: 60%;
+                transform: translate(0, -30%);
+            }
+
+            .content {
+                left: calc(40% + 2rem);
+
+                .text {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mediumScreen) {
+    body>header {
+        right: 0;
+        left: 0;
+
+        .container {
+            max-width: 100%;
+
+            .row:first-of-type {
+                padding-right: $gutter;
+                padding-left: $gutter;
+
+                nav {
+
+                    ul {
+                        flex-direction: column;
+                        position: absolute;
+                        top: 100%;
+                        right: 0;
+                        left: 0;
+                        background-color: $blackColorOverlay;
+                        padding-right: $gutter;
+                        padding-left: $gutter;
+                        display: none;
+
+                        li {
+                            padding-left: 0;
+
+                            a {
+                                padding-top: $halfGutter;
+                                padding-bottom: $halfGutter;
+                            }
+                        }
+                    }
+
+                    i {
+                        cursor: pointer;
+
+                        &.toggle-menu {
+                            @include transition(0.5s);
+                            color: $lightFontColor;
+                            padding-left: $gutter;
+                            display: block;
+
+                            &:focus,
+                            &:hover {
+                                color: $primaryColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+        .content .text {
+            max-width: calc(100% - 2rem);
+        }
+
+        &.landing .arrows {
+            display: none;
+        }
+
+        &.services .service {
+            grid-template-columns: auto;
+            justify-items: center;
+            text-align: center;
+
+            .icon {
+                margin-bottom: $halfGutter;
+            }
+        }
+
+        &.features {
+            min-height: 90vh;
+
+            .img-container {
+                right: 0;
+                left: 0;
+                text-align: center;
+                transform: translate(0, 15%);
+            }
+
+            .content {
+                left: 0;
+                transform: translateY(-75%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $smallScreen) {
+    body>header {
+        .row:first-of-type {
+            padding-right: $halfGutter;
+            padding-left: $halfGutter;
+
+            nav ul {
+                padding-right: $halfGutter;
+                padding-left: $halfGutter;
+            }
+        }
+    }
+
+    section {
+        .content .text {
+            max-width: 100%;
+            padding: 1rem;
+
+            h1 {
+                font-size: 26px;
+                line-height: 40px;
+            }
+        }
+
+        &.features {
+            min-height: 75vh;
+
+            .img-container {
+                text-align: center;
+
+                img {
+                    width: 75%;
+                }
+            }
+
+            .content {
+                transform: translateY(-80%);
+
+                .text {
+                    padding-left: 1rem;
+
+                    h2 {
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
