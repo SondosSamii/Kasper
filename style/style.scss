@@ -185,17 +185,22 @@ section {
 
     .img-container {
       position: absolute;
-      top: 50%;
-      right: calc(50% + 2rem);
-      transform: translate(-10%, -30%);
+      top: 20%;
+      right: 50%;
+      left: 0;
+      text-align: center;
+      // top: 50%;
+      // right: calc(50% + 2rem);
+      // transform: translate(-10%, -30%);
     }
 
     .content {
       right: 0;
-      left: calc(50% + $gutter);
+      // left: calc(50% + $gutter);
+      left: 50%;
 
       .text {
-        padding-left: 4rem;
+        // padding-left: 4rem;
 
         ul {
           list-style: none;

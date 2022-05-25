@@ -1,3 +1,13 @@
+@media screen and (min-width: $largeScreen) {
+    section {
+        &.features {
+            .content .text {
+                padding-left: 4rem;
+            }
+        }
+    }
+}
+
 @media screen and (min-width: $mediumScreen) {
     body>header nav {
         ul {
@@ -26,12 +36,12 @@
 
         &.features {
             .img-container {
-                right: 60%;
-                transform: translate(0, -30%);
+                // right: 60%;
+                // transform: translate(0, -30%);
             }
 
             .content {
-                left: calc(40% + 2rem);
+                // left: calc(40% + 2rem);
 
                 .text {
                     max-width: 100%;
@@ -116,18 +126,18 @@
         }
 
         &.features {
-            min-height: 90vh;
+            min-height: 95vh;
 
             .img-container {
+                top: 55%;
                 right: 0;
                 left: 0;
-                text-align: center;
-                transform: translate(0, 15%);
             }
 
             .content {
+                top: $sectionPadding;
                 left: 0;
-                transform: translateY(-75%);
+                transform: none;
             }
         }
     }
@@ -158,26 +168,12 @@
         }
 
         &.features {
-            min-height: 75vh;
-
-            .img-container {
-                text-align: center;
-
-                img {
-                    width: 75%;
-                }
+            .img-container img {
+                max-width: 90%;
             }
 
-            .content {
-                transform: translateY(-80%);
-
-                .text {
-                    padding-left: 1rem;
-
-                    h2 {
-                        font-size: 1.25rem;
-                    }
-                }
+            .content h2 {
+                font-size: 1.25rem;
             }
         }
     }

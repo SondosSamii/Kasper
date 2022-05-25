@@ -674,16 +674,14 @@ section.features .overlay {
 }
 section.features .img-container {
   position: absolute;
-  top: 50%;
-  right: calc(50% + 2rem);
-  transform: translate(-10%, -30%);
+  top: 20%;
+  right: 50%;
+  left: 0;
+  text-align: center;
 }
 section.features .content {
   right: 0;
-  left: calc(50% + 2rem);
-}
-section.features .content .text {
-  padding-left: 4rem;
+  left: 50%;
 }
 section.features .content .text ul {
   list-style: none;
@@ -699,6 +697,11 @@ section.features .content .text ul li {
   padding-left: 2rem;
 }
 
+@media screen and (min-width: 992px) {
+  section.features .content .text {
+    padding-left: 4rem;
+  }
+}
 @media screen and (min-width: 768px) {
   body > header nav ul {
     display: flex;
@@ -715,13 +718,6 @@ section.features .content .text ul li {
   }
   section .content .text {
     margin: auto;
-  }
-  section.features .img-container {
-    right: 60%;
-    transform: translate(0, -30%);
-  }
-  section.features .content {
-    left: calc(40% + 2rem);
   }
   section.features .content .text {
     max-width: 100%;
@@ -787,17 +783,17 @@ section.features .content .text ul li {
     margin-bottom: 1rem;
   }
   section.features {
-    min-height: 90vh;
+    min-height: 95vh;
   }
   section.features .img-container {
+    top: 55%;
     right: 0;
     left: 0;
-    text-align: center;
-    transform: translate(0, 15%);
   }
   section.features .content {
+    top: 50px;
     left: 0;
-    transform: translateY(-75%);
+    transform: none;
   }
 }
 @media screen and (max-width: 576px) {
@@ -818,22 +814,10 @@ section.features .content .text ul li {
     font-size: 26px;
     line-height: 40px;
   }
-  section.features {
-    min-height: 75vh;
-  }
-  section.features .img-container {
-    text-align: center;
-  }
   section.features .img-container img {
-    width: 75%;
+    max-width: 90%;
   }
-  section.features .content {
-    transform: translateY(-80%);
-  }
-  section.features .content .text {
-    padding-left: 1rem;
-  }
-  section.features .content .text h2 {
+  section.features .content h2 {
     font-size: 1.25rem;
   }
 }
