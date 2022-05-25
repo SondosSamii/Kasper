@@ -39,6 +39,12 @@
                 max-width: 100%;
             }
         }
+
+        &.portfolio {
+            .tabs-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
     }
 }
 
@@ -131,6 +137,12 @@
                 transform: none;
             }
         }
+
+        &.portfolio {
+            .tabs-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     }
 }
 
@@ -165,6 +177,12 @@
 
             .content h2 {
                 font-size: 1.25rem;
+            }
+        }
+
+        &.portfolio {
+            .tabs-content {
+                grid-template-columns: repeat(1, 1fr);
             }
         }
     }

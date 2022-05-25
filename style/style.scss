@@ -37,7 +37,6 @@ body>header {
         padding-left: $gutter;
 
         a {
-          @include transition(0.5s);
           color: $whiteColor;
           font-size: 13px;
           font-weight: 600;
@@ -46,6 +45,7 @@ body>header {
           padding-top: $gutter;
           padding-bottom: $gutter;
           display: block;
+          @include transition(0.5s);
 
           &.active,
           &.focus,
@@ -216,6 +216,54 @@ section {
             padding-left: 2rem;
           }
         }
+      }
+    }
+  }
+
+  &.portfolio {
+    @extend .section-padding;
+
+    .tabs {
+      text-align: center;
+
+      .tab-btn {
+        @include button(13px, $blackColor, transparent, 13px 20px);
+        @include transition(0.3s);
+
+        &.active,
+        &:active,
+        &:hover,
+        &:focus {
+          color: $whiteColor;
+          background-color: $primaryColor;
+          border-color: transparent;
+        }
+      }
+    }
+
+    .tabs-content {
+      @extend .section-padding;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        animation: fadeEffect 1s alternate;
+      }
+    }
+
+    .more-btn {
+      @include button(20px, $whiteColor, $primaryColor, 0.75rem 3rem);
+      display: block;
+      margin: 0 auto;
+
+      &.active,
+      &:active,
+      &:hover,
+      &:focus {
+        border-color: $primaryColor;
       }
     }
   }

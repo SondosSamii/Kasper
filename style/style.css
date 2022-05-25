@@ -50,10 +50,6 @@ body {
   align-items: center;
 }
 
-.text-center {
-  text-align: center;
-}
-
 @media screen and (min-width: 0) {
   .container {
     max-width: 100%;
@@ -439,7 +435,7 @@ body {
     padding-left: 1rem;
   }
 }
-.section-padding, section.services {
+.section-padding, section.portfolio .tabs-content, section.portfolio, section.services {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -449,6 +445,14 @@ body {
   height: auto;
 }
 
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 section header.main-header {
   text-align: center;
   padding-bottom: 50px;
@@ -542,9 +546,6 @@ body > header nav ul li {
   padding-left: 2rem;
 }
 body > header nav ul li a {
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
@@ -553,6 +554,9 @@ body > header nav ul li a {
   padding-top: 2rem;
   padding-bottom: 2rem;
   display: block;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 body > header nav ul li a.active, body > header nav ul li a.focus, body > header nav ul li a:active, body > header nav ul li a:hover {
   color: #00c7fc;
@@ -696,6 +700,54 @@ section.features .content .text ul li {
   background-position-y: center;
   padding-left: 2rem;
 }
+section.portfolio .tabs {
+  text-align: center;
+}
+section.portfolio .tabs .tab-btn {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1f2021;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 13px 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+section.portfolio .tabs .tab-btn.active, section.portfolio .tabs .tab-btn:active, section.portfolio .tabs .tab-btn:hover, section.portfolio .tabs .tab-btn:focus {
+  color: #ffffff;
+  background-color: #00c7fc;
+  border-color: transparent;
+}
+section.portfolio .tabs-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+section.portfolio .tabs-content img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  animation: fadeEffect 1s alternate;
+}
+section.portfolio .more-btn {
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background-color: #00c7fc;
+  border: 1px solid #00c7fc;
+  padding: 0.75rem 3rem;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+section.portfolio .more-btn.active, section.portfolio .more-btn:active, section.portfolio .more-btn:hover, section.portfolio .more-btn:focus {
+  border-color: #00c7fc;
+}
 
 @media screen and (min-width: 992px) {
   section.features .content .text {
@@ -721,6 +773,9 @@ section.features .content .text ul li {
   }
   section.features .content .text {
     max-width: 100%;
+  }
+  section.portfolio .tabs-content {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (max-width: 768px) {
@@ -795,6 +850,9 @@ section.features .content .text ul li {
     left: 0;
     transform: none;
   }
+  section.portfolio .tabs-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 576px) {
   body > header .row:first-of-type {
@@ -819,6 +877,9 @@ section.features .content .text ul li {
   }
   section.features .content h2 {
     font-size: 1.25rem;
+  }
+  section.portfolio .tabs-content {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
