@@ -35,17 +35,8 @@
         }
 
         &.features {
-            .img-container {
-                // right: 60%;
-                // transform: translate(0, -30%);
-            }
-
-            .content {
-                // left: calc(40% + 2rem);
-
-                .text {
-                    max-width: 100%;
-                }
+            .content .text {
+                max-width: 100%;
             }
         }
     }
