@@ -736,7 +736,7 @@ section.portfolio .tabs-content img {
   object-fit: cover;
   animation: fadeEffect 1s alternate;
 }
-section.portfolio .more-btn {
+section.portfolio .show-btn {
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
@@ -749,7 +749,7 @@ section.portfolio .more-btn {
   display: block;
   margin: 0 auto;
 }
-section.portfolio .more-btn.active, section.portfolio .more-btn:active, section.portfolio .more-btn:hover, section.portfolio .more-btn:focus {
+section.portfolio .show-btn.active, section.portfolio .show-btn:active, section.portfolio .show-btn:hover, section.portfolio .show-btn:focus {
   border-color: #00c7fc;
 }
 

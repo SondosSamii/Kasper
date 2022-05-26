@@ -10,6 +10,7 @@ function dFlex() {
 
 window.onload = function () {
   dFlex();
+  toggleShow("block", "none", "none");
 };
 
 window.onresize = function () {
@@ -39,23 +40,18 @@ function showContent(event) {
     const classFlag = allImgs[i].classList.contains(thisTabClass);
     if (classFlag || thisTabClass === "all") {
       allImgs[i].style.display = "block";
-      // console.log(allImgs.length);
-    } else if (allImgs[i] > 7) {
-      allImgs[i].style.display = "none";
+      toggleShow("block", "none", "none");
     } else {
       allImgs[i].style.display = "none";
-    }
-    for (let j = 8; j < allImgs.length; j++) {
-      allImgs[j].style.display = "none";
     }
   }
 }
 
-function showMore() {
-  document.getElementById("showMore").style.display = "none";
+function toggleShow(moreDisplay, lessDisplay, imgDisplay) {
+  document.getElementById("showMore").style.display = moreDisplay;
+  document.getElementById("showLess").style.display = lessDisplay;
   let allImgs = document.getElementById("tabsContent").children;
   for (let i = 8; i < allImgs.length; i++) {
-    console.log(allImgs[i]);
-    allImgs[i].style.display = "block";
+    allImgs[i].style.display = imgDisplay;
   }
 }

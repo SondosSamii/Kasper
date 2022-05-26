@@ -254,7 +254,7 @@ section {
       }
     }
 
-    .more-btn {
+    .show-btn {
       @include button(20px, $whiteColor, $primaryColor, 0.75rem 3rem);
       display: block;
       margin: 0 auto;

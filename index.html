@@ -170,11 +170,13 @@
       <img src="assets/portfolio/web-1.jpg" alt="Web 1" class="img-fix web">
       <img src="assets/portfolio/web-2.jpg" alt="Web 2" class="img-fix web">
 
-      <img src="assets/portfolio/print-1.jpg" alt="Print 1" class="img-fix print d-none">
-      <img src="assets/portfolio/print-2.jpg" alt="Print 2" class="img-fix print d-none">
+      <img src="assets/portfolio/print-1.jpg" alt="Print 1" class="img-fix print">
+      <img src="assets/portfolio/print-2.jpg" alt="Print 2" class="img-fix print">
     </div>
     </div>
-    <button class="more-btn" id="showMore" onclick="showMore()">More</button>
+    <button class="show-btn" id="showMore" onclick="toggleShow('none', 'block', 'block')">More</button>
+    <button class="show-btn" id="showLess" onclick="toggleShow('block', 'none', 'none')">Less</button>
+
   </section>
   <script src="index.js"></script>
 </body>
