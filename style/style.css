@@ -445,6 +445,10 @@ body {
   height: auto;
 }
 
+.d-none {
+  display: none;
+}
+
 @keyframes fadeEffect {
   from {
     opacity: 0;
