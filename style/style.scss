@@ -246,11 +246,54 @@ section {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
 
-      img {
-        width: 100%;
+      .img-box {
+        position: relative;
         height: 320px;
-        object-fit: cover;
-        animation: fadeEffect 1s alternate;
+        overflow: hidden;
+
+        &:hover {
+          img {
+            transform: rotate(10deg) scale(1.3);
+          }
+
+          .caption {
+            opacity: 1;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 320px;
+          object-fit: cover;
+          @include transition(0.5s);
+          animation: fadeEffect 1s alternate;
+        }
+
+        .caption {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: $whiteColor;
+          padding: 1rem 2rem;
+          opacity: 0;
+          @include transition(0.5s);
+
+          & * {
+            margin: 0;
+          }
+
+          h3 {
+            color: $blackColor;
+            font-size: 20px;
+            font-weight: 400;
+          }
+
+          p {
+            color: $primaryColor;
+            font-size: 13px;
+          }
+        }
       }
     }
 
@@ -268,6 +311,8 @@ section {
       }
     }
   }
+
+
 }
 
 @import "media-queries";
