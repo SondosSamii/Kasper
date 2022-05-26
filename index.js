@@ -29,20 +29,23 @@ function showContent(event) {
   let thisTabClass = event.target.value,
     allImgs = document.getElementById("tabsContent").children,
     tabButtons = document.getElementsByClassName("tab-btn");
-  for (let i = 0; i < tabButtons.length; i++) {
-    tabButtons[i].classList.remove("active");
-    if (tabButtons[i].value === thisTabClass) {
-      tabButtons[i].classList.add("active");
+  for (let button of tabButtons) {
+    button.classList.remove("active");
+    if (button.value === thisTabClass) {
+      button.classList.add("active");
     }
   }
 
-  for (let i = 0; i < allImgs.length; i++) {
-    const classFlag = allImgs[i].classList.contains(thisTabClass);
-    if (classFlag || thisTabClass === "all") {
-      allImgs[i].style.display = "block";
+  for (let img of allImgs) {
+    const classFlag = img.classList.contains(thisTabClass);
+    if (classFlag) {
+      img.style.display = "block";
+      toggleShow("none", "none", "block");
+    } else if (thisTabClass === "all") {
+      img.style.display = "block";
       toggleShow("block", "none", "none");
     } else {
-      allImgs[i].style.display = "none";
+      img.style.display = "none";
     }
   }
 }
