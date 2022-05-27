@@ -76,10 +76,6 @@ section {
   &.landing {
     @include sectionBackground(100vh, $blackColor, "../assets/landing-bg.jpg");
 
-    .overlay {
-      @include bgOverlay($blackColorOverlay)
-    }
-
     .content {
       left: 0;
 
@@ -165,8 +161,6 @@ section {
 
       p {
         color: $primaryFontColor;
-        font-size: 13px;
-        font-weight: 400;
         line-height: 24px;
       }
     }
@@ -174,14 +168,6 @@ section {
 
   &.features {
     @include sectionBackground(70vh, $blackColor, "../assets/features-bg.jpg");
-    background-position-y: 70%;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-
-    .overlay {
-      @include bgOverlay($blackColorOverlay)
-    }
 
     .img-container {
       position: absolute;
@@ -189,18 +175,19 @@ section {
       right: 50%;
       left: 0;
       text-align: center;
-      // top: 50%;
-      // right: calc(50% + 2rem);
-      // transform: translate(-10%, -30%);
     }
 
     .content {
       right: 0;
-      // left: calc(50% + $gutter);
       left: 50%;
 
       .text {
-        // padding-left: 4rem;
+        h3 {
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 27px;
+          text-transform: uppercase;
+        }
 
         ul {
           list-style: none;
@@ -291,7 +278,6 @@ section {
 
           p {
             color: $primaryColor;
-            font-size: 13px;
           }
         }
       }
@@ -312,7 +298,39 @@ section {
     }
   }
 
+  &.video {
+    position: relative;
+    overflow: hidden;
+    min-height: auto;
 
+    video {
+      width: 100%;
+    }
+
+    .content {
+      width: 100vw;
+      @extend .section-padding;
+
+      .text {
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+
+        h3 {
+          font-size: 25px;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-top: 0
+        }
+
+        button {
+          @include button(13px, $whiteColor, $blackColor, 10px 30px);
+          // margin: 
+        }
+      }
+    }
+  }
 }
 
 @import "media-queries";

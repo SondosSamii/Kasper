@@ -88,6 +88,10 @@ body {
   background-color: $bgColor;
   background-image: url($bgURL);
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
 }
 
 @mixin button($fontSize, $color, $bgColor, $padding) {
@@ -167,6 +171,10 @@ section {
     }
   }
 
+  .overlay {
+    @include bgOverlay($blackColorOverlay)
+  }
+
   .content {
     @include contentOverlay($whiteColor, 50%, translateY(-50%), $primaryColorOverlay);
     width: 70vw;
@@ -174,11 +182,11 @@ section {
     .text {
       max-width: calc(90% - $gutter);
       padding: $gutter;
-
-      p {
-        font-weight: 400;
-        line-height: 28px;
-      }
     }
+  }
+
+  p {
+    font-size: 13px;
+    font-weight: 400;
   }
 }

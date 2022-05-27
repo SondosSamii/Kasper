@@ -435,7 +435,7 @@ body {
     padding-left: 1rem;
   }
 }
-.section-padding, section.portfolio .tabs-content, section.portfolio, section.services {
+.section-padding, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -500,6 +500,14 @@ section header.main-header p {
   font-weight: 300;
   line-height: 25px;
 }
+section .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(31, 32, 33, 0.7);
+}
 section .content {
   color: #ffffff;
   position: absolute;
@@ -512,9 +520,9 @@ section .content .text {
   max-width: calc(90% - 2rem);
   padding: 2rem;
 }
-section .content .text p {
+section p {
+  font-size: 13px;
   font-weight: 400;
-  line-height: 28px;
 }
 
 body > header {
@@ -582,14 +590,10 @@ section.landing {
   background-color: #1f2021;
   background-image: url("../assets/landing-bg.jpg");
   background-size: cover;
-}
-section.landing .overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(31, 32, 33, 0.7);
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
 }
 section.landing .content {
   left: 0;
@@ -658,8 +662,6 @@ section.services .service h3 {
 }
 section.services .service p {
   color: #a8a8a8;
-  font-size: 13px;
-  font-weight: 400;
   line-height: 24px;
 }
 section.features {
@@ -667,18 +669,10 @@ section.features {
   background-color: #1f2021;
   background-image: url("../assets/features-bg.jpg");
   background-size: cover;
-  background-position-y: 70%;
+  background-position: center;
   background-attachment: fixed;
   position: relative;
   overflow: hidden;
-}
-section.features .overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(31, 32, 33, 0.7);
 }
 section.features .img-container {
   position: absolute;
@@ -690,6 +684,12 @@ section.features .img-container {
 section.features .content {
   right: 0;
   left: 50%;
+}
+section.features .content .text h3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  text-transform: uppercase;
 }
 section.features .content .text ul {
   list-style: none;
@@ -772,7 +772,6 @@ section.portfolio .tabs-content .img-box .caption h3 {
 }
 section.portfolio .tabs-content .img-box .caption p {
   color: #00c7fc;
-  font-size: 13px;
 }
 section.portfolio .show-btn {
   font-size: 20px;
@@ -789,6 +788,40 @@ section.portfolio .show-btn {
 }
 section.portfolio .show-btn.active, section.portfolio .show-btn:active, section.portfolio .show-btn:hover, section.portfolio .show-btn:focus {
   border-color: #00c7fc;
+}
+section.video {
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+}
+section.video video {
+  width: 100%;
+}
+section.video .content {
+  width: 100vw;
+}
+section.video .content .text {
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+section.video .content .text h3 {
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+section.video .content .text button {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background-color: #1f2021;
+  border: 1px solid #1f2021;
+  padding: 10px 30px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 992px) {
@@ -917,11 +950,16 @@ section.portfolio .show-btn.active, section.portfolio .show-btn:active, section.
   section.features .img-container img {
     max-width: 90%;
   }
-  section.features .content h2 {
-    font-size: 1.25rem;
-  }
   section.portfolio .tabs-content {
     grid-template-columns: repeat(1, 1fr);
+  }
+  section.video .content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  section.video .content .text h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 }
 

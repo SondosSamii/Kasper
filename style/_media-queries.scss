@@ -174,10 +174,6 @@
             .img-container img {
                 max-width: 90%;
             }
-
-            .content h2 {
-                font-size: 1.25rem;
-            }
         }
 
         &.portfolio {
@@ -185,5 +181,18 @@
                 grid-template-columns: repeat(1, 1fr);
             }
         }
+
+        &.video {
+            .content {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+                .text h3 {
+                    font-size: 1.25rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+
     }
 }
