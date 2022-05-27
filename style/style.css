@@ -794,6 +794,9 @@ section.video {
   overflow: hidden;
   min-height: auto;
 }
+section.video .overlay {
+  bottom: 5px;
+}
 section.video video {
   width: 100%;
 }

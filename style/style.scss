@@ -303,6 +303,10 @@ section {
     overflow: hidden;
     min-height: auto;
 
+    .overlay {
+      bottom: 5px
+    }
+
     video {
       width: 100%;
     }
