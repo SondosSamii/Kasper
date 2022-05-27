@@ -325,12 +325,16 @@ section {
           font-size: 25px;
           font-weight: 600;
           text-transform: uppercase;
-          margin-top: 0
+          margin: 0
+        }
+
+        p {
+          margin-top: $gutter;
+          margin-bottom: $gutter;
         }
 
         button {
           @include button(13px, $whiteColor, $blackColor, 10px 30px);
-          // margin: 
         }
       }
     }
