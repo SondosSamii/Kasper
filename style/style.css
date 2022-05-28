@@ -1035,7 +1035,14 @@ section.pricing .plan ul li:not(:last-child)::after {
   width: 50%;
   border-bottom: 1px solid #00c7fc;
 }
-section.pricing .plan .buy-now {
+section.pricing .contact {
+  text-align: center;
+}
+section.pricing .contact p {
+  font-size: 1rem;
+  padding-top: 2rem;
+}
+section.pricing button {
   font-size: 13px;
   font-weight: 400;
   text-transform: uppercase;
@@ -1049,33 +1056,18 @@ section.pricing .plan .buy-now {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   text-transform: capitalize;
+}
+section.pricing button.buy-now {
   margin: 1rem 0;
 }
-section.pricing .plan .buy-now:hover {
+section.pricing button.buy-now:hover {
   color: #ffffff;
   background-color: #00c7fc;
 }
-section.pricing .contact {
-  text-align: center;
-}
-section.pricing .contact p {
-  font-size: 1rem;
-  padding-top: 2rem;
-}
-section.pricing .contact .contact-us {
-  font-size: 13px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+section.pricing button.contact-us {
   color: #ffffff;
   background-color: #00c7fc;
-  border: 1px solid #00c7fc;
   padding: 10px 30px;
-  cursor: pointer;
-  text-transform: capitalize;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {

@@ -550,18 +550,6 @@ section {
           }
         }
       }
-
-      .buy-now {
-        @include button(13px, $blackColor, transparent, $primaryColor, 10px 20px);
-        @include transition(0.3s);
-        text-transform: capitalize;
-        margin: $halfGutter 0;
-
-        &:hover {
-          color: $whiteColor;
-          background-color: $primaryColor;
-        }
-      }
     }
 
     .contact {
@@ -571,11 +559,26 @@ section {
         font-size: 1rem;
         padding-top: $gutter;
       }
+    }
 
-      .contact-us {
-        @include button(13px, $whiteColor, $primaryColor, $primaryColor, 10px 30px);
-        text-transform: capitalize;
-        @include transition(0.3s);
+    button {
+      @include button(13px, $blackColor, transparent, $primaryColor, 10px 20px);
+      @include transition(0.3s);
+      text-transform: capitalize;
+
+      &.buy-now {
+        margin: $halfGutter 0;
+
+        &:hover {
+          color: $whiteColor;
+          background-color: $primaryColor;
+        }
+      }
+
+      &.contact-us {
+        color: $whiteColor;
+        background-color: $primaryColor;
+        padding: 10px 30px;
       }
     }
   }
