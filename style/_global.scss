@@ -169,13 +169,14 @@ section {
       font-weight: 300;
       line-height: 25px;
     }
+
   }
 
   .overlay {
     @include bgOverlay($blackColorOverlay)
   }
 
-  .content {
+  >.content {
     @include contentOverlay($whiteColor, 50%, translateY(-50%), $primaryColorOverlay);
     width: 70vw;
 
@@ -188,5 +189,30 @@ section {
   p {
     font-size: 13px;
     font-weight: 400;
+  }
+
+  .indicators {
+    list-style: none;
+    padding-left: 0;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    @extend .center;
+    width: 100%;
+
+    li {
+      width: 12px;
+      height: 12px;
+      margin-right: 3px;
+      margin-left: 3px;
+      border: 1px solid $primaryFontColor;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &.active {
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+      }
+    }
   }
 }

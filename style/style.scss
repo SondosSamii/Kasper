@@ -111,29 +111,7 @@ section {
     }
 
     .indicators {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
       position: absolute;
-      bottom: 22px;
-      display: flex;
-      @extend .center;
-      width: 100%;
-
-      li {
-        width: 12px;
-        height: 12px;
-        margin-right: 3px;
-        margin-left: 3px;
-        border: 1px solid $whiteColor;
-        border-radius: 50%;
-        cursor: pointer;
-
-        &.active {
-          background-color: $primaryColor;
-          border-color: $primaryColor;
-        }
-      }
     }
   }
 
@@ -387,6 +365,115 @@ section {
         h3 {
           font-size: 2rem;
           margin: 1rem 0;
+        }
+      }
+    }
+  }
+
+  &.skills {
+    @extend %section-padding;
+    text-align: center;
+
+    .testimonials {
+      position: relative;
+      padding-bottom: $gutter;
+
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: $halfGutter;
+        text-align: start;
+        margin-bottom: $gutter;
+
+        img {
+          width: 100px;
+          border-radius: 50%;
+          margin: 0 auto;
+        }
+
+        p {
+          color: $blackColor;
+          margin-top: 0;
+        }
+
+        span {
+          color: $primaryFontColor;
+          font-size: smaller;
+          display: block;
+          text-align: end;
+        }
+
+        hr {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    h3 {
+      color: $blackColor;
+      font-size: 22px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    p.main {
+      color: $primaryFontColor;
+      margin-bottom: 3rem;
+    }
+
+    .our-skills {
+      .prog-box {
+        text-align: start;
+
+        h4 {
+          font-size: smaller;
+          font-weight: 600;
+          margin-bottom: 0.3rem;
+        }
+
+        .prog {
+          background-color: $lightFontColor;
+          height: 20px;
+          position: relative;
+
+          span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            background-color: $primaryColor;
+
+            &::before {
+              content: attr(data-progress);
+              width: 30px;
+              height: 20px;
+              position: absolute;
+              bottom: calc(100% + 7px);
+              left: calc(100% - 19px);
+              color: $whiteColor;
+              background-color: $blackColor;
+              border-radius: 4px;
+              padding: 0.25rem;
+              font-size: smaller;
+              text-align: center;
+              display: none;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: -7px;
+              left: calc(100% - 7px);
+              border: 7px solid;
+              border-color: $blackColor transparent transparent;
+              display: none;
+            }
+
+            &:hover::after,
+            &:hover::before {
+              display: block;
+            }
+          }
         }
       }
     }

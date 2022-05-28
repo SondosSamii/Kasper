@@ -38,7 +38,7 @@ body {
   justify-content: space-between;
 }
 
-.center, section.landing .indicators {
+.center, section .indicators {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -435,7 +435,7 @@ body {
     padding-left: 1rem;
   }
 }
-section.about-us .statistic, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
+section.skills, section.about-us .statistic, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -508,7 +508,7 @@ section .overlay {
   left: 0;
   background-color: rgba(31, 32, 33, 0.7);
 }
-section .content {
+section > .content {
   color: #ffffff;
   position: absolute;
   top: 50%;
@@ -516,13 +516,34 @@ section .content {
   background-color: rgba(0, 199, 252, 0.5);
   width: 70vw;
 }
-section .content .text {
+section > .content .text {
   max-width: calc(90% - 2rem);
   padding: 2rem;
 }
 section p {
   font-size: 13px;
   font-weight: 400;
+}
+section .indicators {
+  list-style: none;
+  padding-left: 0;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+}
+section .indicators li {
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+  margin-left: 3px;
+  border: 1px solid #a8a8a8;
+  border-radius: 50%;
+  cursor: pointer;
+}
+section .indicators li.active {
+  background-color: #00c7fc;
+  border-color: #00c7fc;
 }
 
 body > header {
@@ -623,26 +644,7 @@ section.landing .arrows i.fa-chevron-right {
   right: 2rem;
 }
 section.landing .indicators {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
   position: absolute;
-  bottom: 22px;
-  display: flex;
-  width: 100%;
-}
-section.landing .indicators li {
-  width: 12px;
-  height: 12px;
-  margin-right: 3px;
-  margin-left: 3px;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  cursor: pointer;
-}
-section.landing .indicators li.active {
-  background-color: #00c7fc;
-  border-color: #00c7fc;
 }
 section.services .service {
   display: grid;
@@ -880,6 +882,95 @@ section.about-us .statistic .state-content h3 {
   font-size: 2rem;
   margin: 1rem 0;
 }
+section.skills {
+  text-align: center;
+}
+section.skills .testimonials {
+  position: relative;
+  padding-bottom: 2rem;
+}
+section.skills .testimonials .content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 1rem;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+section.skills .testimonials .content img {
+  width: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+section.skills .testimonials .content p {
+  color: #1f2021;
+  margin-top: 0;
+}
+section.skills .testimonials .content span {
+  color: #a8a8a8;
+  font-size: smaller;
+  display: block;
+  text-align: end;
+}
+section.skills .testimonials .content hr {
+  border-bottom: 0;
+}
+section.skills h3 {
+  color: #1f2021;
+  font-size: 22px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+section.skills p.main {
+  color: #a8a8a8;
+  margin-bottom: 3rem;
+}
+section.skills .our-skills .prog-box {
+  text-align: start;
+}
+section.skills .our-skills .prog-box h4 {
+  font-size: smaller;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+section.skills .our-skills .prog-box .prog {
+  background-color: #d6d6d6;
+  height: 20px;
+  position: relative;
+}
+section.skills .our-skills .prog-box .prog span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  background-color: #00c7fc;
+}
+section.skills .our-skills .prog-box .prog span::before {
+  content: attr(data-progress);
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: calc(100% - 19px);
+  color: #ffffff;
+  background-color: #1f2021;
+  border-radius: 4px;
+  padding: 0.25rem;
+  font-size: smaller;
+  text-align: center;
+  display: none;
+}
+section.skills .our-skills .prog-box .prog span::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: calc(100% - 7px);
+  border: 7px solid;
+  border-color: #1f2021 transparent transparent;
+  display: none;
+}
+section.skills .our-skills .prog-box .prog span:hover::after, section.skills .our-skills .prog-box .prog span:hover::before {
+  display: block;
+}
 
 @media screen and (min-width: 768px) {
   body > header nav ul {
@@ -896,11 +987,11 @@ section.about-us .statistic .state-content h3 {
   }
 }
 @media screen and (max-width: 992px) {
-  section .content {
+  section > .content {
     width: 100vw;
     max-width: 100%;
   }
-  section .content .text {
+  section > .content .text {
     margin: auto;
   }
   section.features .content .text {
@@ -908,6 +999,19 @@ section.about-us .statistic .state-content h3 {
   }
   section.portfolio .tabs-content {
     grid-template-columns: repeat(3, 1fr);
+  }
+  section.skills p.main {
+    margin-bottom: 2rem;
+  }
+  section.skills .testimonials .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    row-gap: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  section.skills .testimonials .content span {
+    text-align: center;
   }
 }
 @media screen and (max-width: 768px) {
@@ -955,7 +1059,7 @@ section.about-us .statistic .state-content h3 {
     color: #00c7fc;
   }
 
-  section .content .text {
+  section > .content .text {
     max-width: calc(100% - 2rem);
   }
   section.landing .arrows {
@@ -1000,11 +1104,11 @@ section.about-us .statistic .state-content h3 {
     padding-left: 1rem;
   }
 
-  section .content .text {
+  section > .content .text {
     max-width: 100%;
     padding: 1rem;
   }
-  section .content .text h1 {
+  section > .content .text h1 {
     font-size: 26px;
     line-height: 40px;
   }
