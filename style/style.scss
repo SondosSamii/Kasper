@@ -480,6 +480,7 @@ section {
     .plan {
       color: $blackColor;
       text-align: center;
+      padding-bottom: $gutter;
 
       h3 {
         font-size: 1rem;
@@ -510,6 +511,7 @@ section {
         padding: 1rem 0;
         border-top: 1px solid $primaryColor;
         border-bottom: 1px solid $primaryColor;
+        margin-bottom: $gutter;
 
         li:not(:last-child) {
           padding-bottom: 1.5rem;
@@ -530,6 +532,7 @@ section {
         @include button(13px, $blackColor, transparent, $primaryColor, 10px 20px);
         @include transition(0.3s);
         margin: $halfGutter 0;
+        text-decoration: none;
 
         &:hover {
           color: $whiteColor;
