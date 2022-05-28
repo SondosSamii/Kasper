@@ -97,7 +97,6 @@ body {
 @mixin button($fontSize, $color, $bgColor, $brdColor, $padding) {
   font-size: $fontSize;
   font-weight: 400;
-  text-transform: uppercase;
   letter-spacing: 1px;
   color: $color;
   background-color: $bgColor;

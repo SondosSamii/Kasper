@@ -194,6 +194,7 @@ section {
       .tab-btn {
         @include button(13px, $blackColor, transparent, transparent, 13px 20px);
         @include transition(0.3s);
+        text-transform: uppercase;
 
         &.active,
         &:active,
@@ -262,6 +263,7 @@ section {
 
     .show-btn {
       @include button(20px, $whiteColor, $primaryColor, $primaryColor, 0.75rem 3rem);
+      text-transform: uppercase;
       display: block;
       margin: 0 auto $halfGutter;
     }
@@ -304,6 +306,7 @@ section {
 
         button {
           @include button(13px, $whiteColor, $blackColor, $blackColor, 10px 30px);
+          text-transform: uppercase;
         }
       }
     }
@@ -550,6 +553,17 @@ section {
           }
         }
       }
+
+      .buy-now {
+        @include button(13px, $blackColor, transparent, $primaryColor, 10px 20px);
+        @include transition(0.3s);
+        margin: $halfGutter 0;
+
+        &:hover {
+          color: $whiteColor;
+          background-color: $primaryColor;
+        }
+      }
     }
 
     .contact {
@@ -559,26 +573,10 @@ section {
         font-size: 1rem;
         padding-top: $gutter;
       }
-    }
 
-    button {
-      @include button(13px, $blackColor, transparent, $primaryColor, 10px 20px);
-      @include transition(0.3s);
-      text-transform: capitalize;
-
-      &.buy-now {
-        margin: $halfGutter 0;
-
-        &:hover {
-          color: $whiteColor;
-          background-color: $primaryColor;
-        }
-      }
-
-      &.contact-us {
-        color: $whiteColor;
-        background-color: $primaryColor;
-        padding: 10px 30px;
+      .contact-us {
+        @include button(13px, $whiteColor, $primaryColor, $primaryColor, 10px 30px);
+        @include transition(0.3s);
       }
     }
   }
