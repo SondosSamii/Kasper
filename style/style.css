@@ -963,7 +963,8 @@ section.skills .our-skills .prog-box .prog span::after {
   position: absolute;
   top: -7px;
   left: calc(100% - 7px);
-  border: 7px solid;
+  border-width: 7px;
+  border-style: solid;
   border-color: #1f2021 transparent transparent;
   display: none;
 }

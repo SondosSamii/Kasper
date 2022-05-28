@@ -464,7 +464,8 @@ section {
               position: absolute;
               top: -7px;
               left: calc(100% - 7px);
-              border: 7px solid;
+              border-width: 7px;
+              border-style: solid;
               border-color: $blackColor transparent transparent;
               display: none;
             }
