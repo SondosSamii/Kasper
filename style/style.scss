@@ -445,15 +445,15 @@ section {
 
             &::before {
               content: attr(data-progress);
-              width: 30px;
-              height: 20px;
+              width: 28px;
               position: absolute;
               bottom: calc(100% + 7px);
-              left: calc(100% - 19px);
+              // Full width including padding is 36 > 36/2 = 18
+              left: calc(100% - 18px);
               color: $whiteColor;
               background-color: $blackColor;
               border-radius: 4px;
-              padding: 0.25rem;
+              padding: 4px;
               font-size: smaller;
               text-align: center;
               display: none;

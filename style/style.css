@@ -946,15 +946,14 @@ section.skills .our-skills .prog-box .prog span {
 }
 section.skills .our-skills .prog-box .prog span::before {
   content: attr(data-progress);
-  width: 30px;
-  height: 20px;
+  width: 28px;
   position: absolute;
   bottom: calc(100% + 7px);
-  left: calc(100% - 19px);
+  left: calc(100% - 18px);
   color: #ffffff;
   background-color: #1f2021;
   border-radius: 4px;
-  padding: 0.25rem;
+  padding: 4px;
   font-size: smaller;
   text-align: center;
   display: none;
