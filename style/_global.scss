@@ -94,14 +94,14 @@ body {
   overflow: hidden;
 }
 
-@mixin button($fontSize, $color, $bgColor, $padding) {
+@mixin button($fontSize, $color, $bgColor, $brdColor, $padding) {
   font-size: $fontSize;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: $color;
   background-color: $bgColor;
-  border: 1px solid $bgColor;
+  border: 1px solid $brdColor;
   padding: $padding;
   cursor: pointer;
 }

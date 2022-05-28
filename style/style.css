@@ -435,7 +435,7 @@ body {
     padding-left: 1rem;
   }
 }
-section.quote .container, section.quote, section.skills, section.about-us .statistic, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
+section.pricing, section.quote .container, section.quote, section.skills, section.about-us .statistic, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -726,7 +726,6 @@ section.portfolio .tabs .tab-btn {
 section.portfolio .tabs .tab-btn.active, section.portfolio .tabs .tab-btn:active, section.portfolio .tabs .tab-btn:hover, section.portfolio .tabs .tab-btn:focus {
   color: #ffffff;
   background-color: #00c7fc;
-  border-color: transparent;
 }
 section.portfolio .tabs-content {
   display: grid;
@@ -787,9 +786,6 @@ section.portfolio .show-btn {
   cursor: pointer;
   display: block;
   margin: 0 auto 1rem;
-}
-section.portfolio .show-btn.active, section.portfolio .show-btn:active, section.portfolio .show-btn:hover, section.portfolio .show-btn:focus {
-  border-color: #00c7fc;
 }
 section.video {
   position: relative;
@@ -997,6 +993,89 @@ section.quote q::before, section.quote q::after {
 }
 section.quote span {
   color: #ffffff;
+}
+section.pricing .plan {
+  color: #1f2021;
+  text-align: center;
+}
+section.pricing .plan h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-top: 1px solid #00c7fc;
+  padding-top: 1rem;
+}
+section.pricing .plan span {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+section.pricing .plan span sup.dollar {
+  font-size: 1rem;
+}
+section.pricing .plan span sub {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+section.pricing .plan ul {
+  list-style: none;
+  padding: 1rem 0;
+  border-top: 1px solid #00c7fc;
+  border-bottom: 1px solid #00c7fc;
+}
+section.pricing .plan ul li:not(:last-child) {
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+section.pricing .plan ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0.75rem;
+  left: 25%;
+  width: 50%;
+  border-bottom: 1px solid #00c7fc;
+}
+section.pricing .plan .buy-now {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1f2021;
+  background-color: transparent;
+  border: 1px solid #00c7fc;
+  padding: 10px 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-transform: capitalize;
+  margin: 1rem 0;
+}
+section.pricing .plan .buy-now:hover {
+  color: #ffffff;
+  background-color: #00c7fc;
+}
+section.pricing .contact {
+  text-align: center;
+}
+section.pricing .contact p {
+  font-size: 1rem;
+  padding-top: 2rem;
+}
+section.pricing .contact .contact-us {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background-color: #00c7fc;
+  border: 1px solid #00c7fc;
+  padding: 10px 30px;
+  cursor: pointer;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
