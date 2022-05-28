@@ -435,7 +435,7 @@ body {
     padding-left: 1rem;
   }
 }
-section.about-us .statistic, section.about-us, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
+section.about-us .statistic, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -831,6 +831,7 @@ section.video .content .text button {
   cursor: pointer;
 }
 section.about-us {
+  padding-top: 50px;
   position: relative;
 }
 section.about-us .banner {

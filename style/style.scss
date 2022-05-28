@@ -341,7 +341,7 @@ section {
   }
 
   &.about-us {
-    @extend %section-padding;
+    padding-top: $sectionPadding;
     position: relative;
 
     .banner {
