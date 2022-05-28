@@ -138,7 +138,7 @@ section {
   }
 
   &.services {
-    @extend .section-padding;
+    @extend %section-padding;
 
     .service {
       display: grid;
@@ -208,7 +208,7 @@ section {
   }
 
   &.portfolio {
-    @extend .section-padding;
+    @extend %section-padding;
 
     .tabs {
       text-align: center;
@@ -229,7 +229,7 @@ section {
     }
 
     .tabs-content {
-      @extend .section-padding;
+      @extend %section-padding;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
 
@@ -313,7 +313,7 @@ section {
 
     .content {
       width: 100vw;
-      @extend .section-padding;
+      @extend %section-padding;
 
       .text {
         max-width: 100%;
@@ -335,6 +335,64 @@ section {
 
         button {
           @include button(13px, $whiteColor, $blackColor, 10px 30px);
+        }
+      }
+    }
+  }
+
+  &.about-us {
+    @extend %section-padding;
+    position: relative;
+
+    .banner {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+    }
+
+    .statistic {
+      @include sectionBackground(auto, $blackColor, "../assets/statistic-bg.jpg");
+      color: $whiteColor;
+      @extend %section-padding;
+
+      .container {
+        position: relative;
+        text-align: center;
+        background-color: $primaryColorOverlay;
+        padding-top: $gutter;
+        padding-bottom: $gutter;
+      }
+
+      .state-content {
+        padding-top: $halfGutter;
+        padding-bottom: $halfGutter;
+
+        .icon {
+          height: 36px;
+          line-height: 36px;
+          background-image: url(../assets/path.svg);
+          background-repeat: no-repeat;
+          background-position-x: center;
+          position: relative;
+
+          img {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        h3 {
+          font-size: 2rem;
+          margin: 1rem 0;
         }
       }
     }

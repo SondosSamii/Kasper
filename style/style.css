@@ -435,7 +435,7 @@ body {
     padding-left: 1rem;
   }
 }
-.section-padding, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
+section.about-us .statistic, section.about-us, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -829,6 +829,60 @@ section.video .content .text button {
   border: 1px solid #1f2021;
   padding: 10px 30px;
   cursor: pointer;
+}
+section.about-us {
+  position: relative;
+}
+section.about-us .banner {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+section.about-us .banner img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+section.about-us .statistic {
+  min-height: auto;
+  background-color: #1f2021;
+  background-image: url("../assets/statistic-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+section.about-us .statistic .container {
+  position: relative;
+  text-align: center;
+  background-color: rgba(0, 199, 252, 0.5);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+section.about-us .statistic .state-content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+section.about-us .statistic .state-content .icon {
+  height: 36px;
+  line-height: 36px;
+  background-image: url(../assets/path.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  position: relative;
+}
+section.about-us .statistic .state-content .icon img {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+section.about-us .statistic .state-content h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 @media screen and (min-width: 992px) {

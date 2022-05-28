@@ -52,7 +52,7 @@ body {
 
 @import "grid-system";
 
-.section-padding {
+%section-padding {
   padding-top: $sectionPadding;
   padding-bottom: $sectionPadding;
 }

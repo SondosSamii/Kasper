@@ -1,4 +1,6 @@
 const navMenu = document.getElementById("nav-menu");
+let states = document.querySelectorAll("#statistic .state"),
+  counter = 0;
 
 function dFlex() {
   if (window.innerWidth > 768) {
@@ -7,15 +9,6 @@ function dFlex() {
     navMenu.style.display = "none";
   }
 }
-
-window.onload = function () {
-  dFlex();
-  toggleShow("block", "none", "none");
-};
-
-window.onresize = function () {
-  dFlex();
-};
 
 document.getElementById("toggle-menu").onclick = function () {
   if (navMenu.style.display !== "flex") {
@@ -58,3 +51,35 @@ function toggleShow(moreDisplay, lessDisplay, imgDisplay) {
     allImgs[i].style.display = imgDisplay;
   }
 }
+
+window.onload = function () {
+  dFlex();
+  toggleShow("block", "none", "none");
+};
+
+window.onresize = function () {
+  dFlex();
+};
+
+function counterUp(state, max) {
+  state.innerHTML = counter;
+  if (counter < max) {
+    setTimeout(function () {
+      counterUp(state, max);
+    }, 1);
+    counter++;
+  } else {
+    state.innerHTML = max;
+  }
+}
+
+function counterUpInView() {
+  if (states[0].getBoundingClientRect().top <= window.innerHeight) {
+    for (const state of states) {
+      counterUp(state, state.innerHTML);
+    }
+    document.removeEventListener("scroll", counterUpInView);
+  }
+}
+
+document.addEventListener("scroll", counterUpInView);
