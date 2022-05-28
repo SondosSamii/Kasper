@@ -435,7 +435,7 @@ body {
     padding-left: 1rem;
   }
 }
-section.pricing, section.quote .container, section.quote, section.skills, section.about-us .statistic, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
+div.quote .container, div.quote, section.pricing, section.skills, section.about-us .statistic, section.video .content, section.portfolio .tabs-content, section.portfolio, section.services {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -967,33 +967,6 @@ section.skills .our-skills .prog-box .prog span::after {
 section.skills .our-skills .prog-box .prog span:hover::after, section.skills .our-skills .prog-box .prog span:hover::before {
   display: block;
 }
-section.quote {
-  min-height: auto;
-  background-color: #1f2021;
-  background-image: url("../assets/geometric-bg.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-section.quote .container {
-  position: relative;
-}
-section.quote q {
-  font-size: 1.3rem;
-  color: #ffffff;
-  line-height: 1.8;
-  display: block;
-  margin-bottom: 1rem;
-}
-section.quote q::before, section.quote q::after {
-  content: '"';
-}
-section.quote span {
-  color: #ffffff;
-}
 section.pricing .plan {
   color: #1f2021;
   text-align: center;
@@ -1072,6 +1045,42 @@ section.pricing .contact .contact-us {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+div.quote {
+  min-height: auto;
+  background-color: #1f2021;
+  background-image: url("../assets/geometric-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+div.quote .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(31, 32, 33, 0.7);
+}
+div.quote .container {
+  position: relative;
+}
+div.quote q {
+  font-size: 1.3rem;
+  color: #ffffff;
+  line-height: 1.8;
+  display: block;
+  margin-bottom: 1rem;
+}
+div.quote q::before, div.quote q::after {
+  content: '"';
+}
+div.quote span {
+  color: #ffffff;
 }
 
 @media screen and (min-width: 768px) {

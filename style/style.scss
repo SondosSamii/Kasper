@@ -474,34 +474,6 @@ section {
     }
   }
 
-  &.quote {
-    @include sectionBackground(auto, $blackColor, "../assets/geometric-bg.webp");
-    @extend %section-padding;
-    text-align: center;
-
-    .container {
-      @extend %section-padding;
-      position: relative;
-    }
-
-    q {
-      font-size: 1.3rem;
-      color: $whiteColor;
-      line-height: 1.8;
-      display: block;
-      margin-bottom: $halfGutter;
-
-      &::before,
-      &::after {
-        content: '"';
-      }
-    }
-
-    span {
-      color: $whiteColor;
-    }
-  }
-
   &.pricing {
     @extend %section-padding;
 
@@ -578,6 +550,40 @@ section {
         @include button(13px, $whiteColor, $primaryColor, $primaryColor, 10px 30px);
         @include transition(0.3s);
       }
+    }
+  }
+}
+
+div {
+  &.quote {
+    @include sectionBackground(auto, $blackColor, "../assets/geometric-bg.webp");
+    @extend %section-padding;
+    text-align: center;
+
+    .overlay {
+      @include bgOverlay($blackColorOverlay);
+    }
+
+    .container {
+      @extend %section-padding;
+      position: relative;
+    }
+
+    q {
+      font-size: 1.3rem;
+      color: $whiteColor;
+      line-height: 1.8;
+      display: block;
+      margin-bottom: $halfGutter;
+
+      &::before,
+      &::after {
+        content: '"';
+      }
+    }
+
+    span {
+      color: $whiteColor;
     }
   }
 }
