@@ -23,6 +23,7 @@ $container-max-widths: (
   xl: 1140px,
 );
 
+$xSmallScreen: map.get($grid-breakpoints, "xs");
 $smallScreen: map.get($grid-breakpoints, "sm");
 $mediumScreen: map.get($grid-breakpoints, "md");
 $largeScreen: map.get($grid-breakpoints, "lg");

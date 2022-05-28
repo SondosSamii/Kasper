@@ -835,15 +835,10 @@ section.about-us {
 }
 section.about-us .banner {
   position: relative;
-  height: 260px;
-  overflow: hidden;
-}
-section.about-us .banner img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
+  width: 95%;
+  text-align: center;
+  bottom: -120px;
+  margin: -120px auto 0;
 }
 section.about-us .statistic {
   min-height: auto;
@@ -885,18 +880,18 @@ section.about-us .statistic .state-content h3 {
   margin: 1rem 0;
 }
 
-@media screen and (min-width: 992px) {
-  section.features .content .text {
-    padding-left: 4rem;
-  }
-}
 @media screen and (min-width: 768px) {
   body > header nav ul {
     display: flex;
   }
-  body > header nav i.toggle-menu {
+  body > header i.toggle-menu {
     padding-left: 2rem;
     display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  section.features .content .text {
+    padding-left: 4rem;
   }
 }
 @media screen and (max-width: 992px) {
@@ -922,11 +917,11 @@ section.about-us .statistic .state-content h3 {
   body > header .container {
     max-width: 100%;
   }
-  body > header .container .row:first-of-type {
+  body > header .row:first-of-type {
     padding-right: 2rem;
     padding-left: 2rem;
   }
-  body > header .container .row:first-of-type nav ul {
+  body > header nav ul {
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -937,17 +932,17 @@ section.about-us .statistic .state-content h3 {
     padding-left: 2rem;
     display: none;
   }
-  body > header .container .row:first-of-type nav ul li {
+  body > header nav ul li {
     padding-left: 0;
   }
-  body > header .container .row:first-of-type nav ul li a {
+  body > header nav ul li a {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-  body > header .container .row:first-of-type nav i {
+  body > header nav i {
     cursor: pointer;
   }
-  body > header .container .row:first-of-type nav i.toggle-menu {
+  body > header nav i.toggle-menu {
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -955,7 +950,7 @@ section.about-us .statistic .state-content h3 {
     padding-left: 2rem;
     display: block;
   }
-  body > header .container .row:first-of-type nav i.toggle-menu:focus, body > header .container .row:first-of-type nav i.toggle-menu:hover {
+  body > header nav i.toggle-menu:focus, body > header nav i.toggle-menu:hover {
     color: #00c7fc;
   }
 
@@ -989,13 +984,17 @@ section.about-us .statistic .state-content h3 {
   section.portfolio .tabs-content {
     grid-template-columns: repeat(2, 1fr);
   }
+  section.about-us .banner {
+    bottom: -110px;
+    margin-top: -110px;
+  }
 }
 @media screen and (max-width: 576px) {
   body > header .row:first-of-type {
     padding-right: 1rem;
     padding-left: 1rem;
   }
-  body > header .row:first-of-type nav ul {
+  body > header nav ul {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -1021,6 +1020,10 @@ section.about-us .statistic .state-content h3 {
   section.video .content .text h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+  }
+  section.about-us .banner {
+    bottom: -75px;
+    margin-top: -75px;
   }
 }
 

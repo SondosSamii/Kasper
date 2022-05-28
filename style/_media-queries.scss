@@ -1,16 +1,6 @@
-@media screen and (min-width: $largeScreen) {
-    section {
-        &.features {
-            .content .text {
-                padding-left: 4rem;
-            }
-        }
-    }
-}
-
 @media screen and (min-width: $mediumScreen) {
-    body>header nav {
-        ul {
+    body>header {
+        nav ul {
             display: flex;
         }
 
@@ -18,6 +8,16 @@
             &.toggle-menu {
                 padding-left: $gutter;
                 display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $largeScreen) {
+    section {
+        &.features {
+            .content .text {
+                padding-left: 4rem;
             }
         }
     }
@@ -55,48 +55,48 @@
 
         .container {
             max-width: 100%;
+        }
 
-            .row:first-of-type {
+        .row:first-of-type {
+            padding-right: $gutter;
+            padding-left: $gutter;
+
+        }
+
+        nav {
+            ul {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background-color: $blackColorOverlay;
                 padding-right: $gutter;
                 padding-left: $gutter;
+                display: none;
 
-                nav {
+                li {
+                    padding-left: 0;
 
-                    ul {
-                        flex-direction: column;
-                        position: absolute;
-                        top: 100%;
-                        right: 0;
-                        left: 0;
-                        background-color: $blackColorOverlay;
-                        padding-right: $gutter;
-                        padding-left: $gutter;
-                        display: none;
-
-                        li {
-                            padding-left: 0;
-
-                            a {
-                                padding-top: $halfGutter;
-                                padding-bottom: $halfGutter;
-                            }
-                        }
+                    a {
+                        padding-top: $halfGutter;
+                        padding-bottom: $halfGutter;
                     }
+                }
+            }
 
-                    i {
-                        cursor: pointer;
+            i {
+                cursor: pointer;
 
-                        &.toggle-menu {
-                            @include transition(0.5s);
-                            color: $lightFontColor;
-                            padding-left: $gutter;
-                            display: block;
+                &.toggle-menu {
+                    @include transition(0.5s);
+                    color: $lightFontColor;
+                    padding-left: $gutter;
+                    display: block;
 
-                            &:focus,
-                            &:hover {
-                                color: $primaryColor;
-                            }
-                        }
+                    &:focus,
+                    &:hover {
+                        color: $primaryColor;
                     }
                 }
             }
@@ -143,6 +143,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        &.about-us .banner {
+            bottom: -110px;
+            margin-top: -110px;
+        }
     }
 }
 
@@ -151,11 +156,11 @@
         .row:first-of-type {
             padding-right: $halfGutter;
             padding-left: $halfGutter;
+        }
 
-            nav ul {
-                padding-right: $halfGutter;
-                padding-left: $halfGutter;
-            }
+        nav ul {
+            padding-right: $halfGutter;
+            padding-left: $halfGutter;
         }
     }
 
@@ -194,5 +199,9 @@
             }
         }
 
+        &.about-us .banner {
+            bottom: -75px;
+            margin-top: -75px;
+        }
     }
 }

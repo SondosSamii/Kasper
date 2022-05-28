@@ -346,16 +346,10 @@ section {
 
     .banner {
       position: relative;
-      height: 260px;
-      overflow: hidden;
-
-      img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        margin: 0 auto;
-      }
+      width: 95%;
+      text-align: center;
+      bottom: -120px;
+      margin: -120px auto 0;
     }
 
     .statistic {
