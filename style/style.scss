@@ -479,6 +479,34 @@ section {
       }
     }
   }
+
+  &.quote {
+    @include sectionBackground(auto, $blackColor, "../assets/geometric-bg.webp");
+    @extend %section-padding;
+    text-align: center;
+
+    .container {
+      @extend %section-padding;
+      position: relative;
+    }
+
+    q {
+      font-size: 1.3rem;
+      color: $whiteColor;
+      line-height: 1.8;
+      display: block;
+      margin-bottom: $halfGutter;
+
+      &::before,
+      &::after {
+        content: '"';
+      }
+    }
+
+    span {
+      color: $whiteColor;
+    }
+  }
 }
 
 @import "media-queries";
